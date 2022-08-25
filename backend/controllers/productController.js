@@ -96,7 +96,7 @@ exports.getProductsBySubCat = catchAsyncErrors(async (req, res, next) => {
 
 // update product
 exports.updateProduct = catchAsyncErrors(async (req, res, next) => {
-  console.log(req.params.id);
+  
   let product = await Product.findById(req.params.id);
 
   if (!product) {
@@ -116,7 +116,6 @@ exports.updateProduct = catchAsyncErrors(async (req, res, next) => {
 });
 
 // Delete Product
-
 exports.deleteProduct = catchAsyncErrors(async (req, res, next) => {
   const product = await Product.findById(req.params.id);
 

@@ -23,7 +23,7 @@ router.route("/product/getBySubCat").post(getProductsBySubCat);
 
 router.route("/product/update/:id").put(updateProduct);
 
-router.route("/product/delete/:id").delete(isAuthenticatedUser, deleteProduct);
+router.route("/product/delete/:id").delete(deleteProduct);
 
 // router.route("/product/:id").get(getProductDetails);
 
