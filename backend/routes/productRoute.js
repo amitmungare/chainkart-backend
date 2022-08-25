@@ -23,10 +23,7 @@ router.route("/product/getBySubCat").post(getProductsBySubCat);
 
 router.route("/product/update/:id").put(updateProduct);
 
-// router
-//   .route("/admin/product/:id")
-//   .put(isAuthenticatedUser, authorizeRoles("admin"), updateProduct)
-//   .delete(isAuthenticatedUser, authorizeRoles("admin"), deleteProduct);
+router.route("/product/delete/:id").delete(isAuthenticatedUser, deleteProduct);
 
 // router.route("/product/:id").get(getProductDetails);
 
