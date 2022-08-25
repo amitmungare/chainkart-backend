@@ -5,6 +5,7 @@ const {
   deleteProduct,
   getAllProducts,
   getProductsBySubCat,
+  newArrivals
 } = require("../controllers/productController");
 
 const { isAuthenticatedUser, authorizeRoles } = require("../middleware/auth");
@@ -13,7 +14,8 @@ const router = express.Router();
 
 // authorizeRoles("user"),
 // isAuthenticatedUser,
-// router.route("/products").get(getAllProducts);
+
+router.route("/product/newarrivals").get(newArrivals);
 
 router.route("/product/new").post(createProduct);
 

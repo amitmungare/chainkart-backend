@@ -69,6 +69,16 @@ exports.getAllProducts = catchAsyncErrors(async (req, res, next) => {
   });
 });
 
+// newArrivals
+exports.newArrivals = catchAsyncErrors(async (req, res, next) => {
+  
+  const products = await Product.find();
+  res.status(200).json({
+    success: true,
+    products,
+  });
+});
+
 exports.getProductsBySubCat = catchAsyncErrors(async (req, res, next) => {
   const { subCategory } = req.body;
   const products = await Product.find({ subCategory });
@@ -78,21 +88,21 @@ exports.getProductsBySubCat = catchAsyncErrors(async (req, res, next) => {
   });
 });
 
-// exports.getProductDetails = catchAsyncErrors(async (req, res, next) => {
-//   Product.find({ name: "bata" }, (err, data) => {
-//     console.log(h);
-//   });
-//   const product = await Product.findById(req.params.id);
+exports.getProductDetails = catchAsyncErrors(async (req, res, next) => {
+  Product.find({ name: "bata" }, (err, data) => {
+    console.log(h);
+  });
+  const product = await Product.findById(req.params.id);
 
-//   if (!product) {
-//     return next(new ErrorHander("Product not found", 404));
-//   }
+  if (!product) {
+    return next(new ErrorHander("Product not found", 404));
+  }
 
-//   res.status(200).json({
-//     success: true,
-//     product,
-//   });
-// });
+  res.status(200).json({
+    success: true,
+    product,
+  });
+});
 
 // update product
 exports.updateProduct = catchAsyncErrors(async (req, res, next) => {
