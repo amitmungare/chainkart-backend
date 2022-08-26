@@ -32,7 +32,7 @@ exports.createProduct = catchAsyncErrors(async (req, res, next) => {
     url: "https://api-eu1.tatum.io/v3/nft/mint",
     headers: {
       "Content-Type": "application/json",
-      "x-api-key": "e611175b-adbd-4c10-8644-05e021264851",
+      "x-api-key": "657b85a0-814a-4300-933d-40b17088147a",
       "x-testnet-type": "ethereum-ropsten",
     },
     data: data2,
