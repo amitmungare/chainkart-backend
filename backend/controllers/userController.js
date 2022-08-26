@@ -11,8 +11,7 @@ const { default: axios } = require("axios");
 
 // register a user
 exports.registerUser = catchAsyncErrors(async (req, res, next) => {
-  let walladdress;
-  // console.log(req.body);
+  let walletAddress;
   const {
     firstname,
     lastname,
@@ -37,7 +36,7 @@ exports.registerUser = catchAsyncErrors(async (req, res, next) => {
   };
   let ress = await axios(config);
 
-  walladdress = ress.data.address;
+  walletAddress = ress.data.address;
 
   const user = await User.create({
     firstname,
@@ -49,7 +48,7 @@ exports.registerUser = catchAsyncErrors(async (req, res, next) => {
     landmark,
     state,
     pincode,
-    walladdress
+    walletAddress
   });
 
   sendToken(user, 201, res);
