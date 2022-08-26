@@ -28,9 +28,9 @@ exports.registerUser = catchAsyncErrors(async (req, res, next) => {
 
   let config = {
     method: "get",
-    url: `https://api-eu1.tatum.io/v3/ethereum/address/xpub6F8593rRzek14FYtR5b2EKL8x5nQviU8kUiLp1cj2dKK1tPkunSJPB4umybMJXkMAa2BN2m5xZ7bjaEP4WDXQzG8G5VxQCH45369Kd71nkH/${randomnumber}`,
+    url: `https://api-eu1.tatum.io/v3/ethereum/address/xpub6DwkuvdXKwsPH5tRfQzz67uh3VZb98pLrG7asUA7JQUjR3wWnucXPt9N4JZNEW7xMg2Gbb76WHy8ZQnLtMgHqRDqofp4TuAGQvqXAVZ1sKW/${randomnumber}`,
     headers: {
-      "x-api-key": "fd070147-8700-4a49-949c-ac3c1ece0c93",
+      "x-api-key": "e611175b-adbd-4c10-8644-05e021264851",
       "x-testnet-type": "ethereum-ropsten",
     },
   };

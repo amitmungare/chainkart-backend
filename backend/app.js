@@ -28,11 +28,6 @@ app.use("/api/v1", order);
 app.use("/api/v1", payment);
 app.use("/api/v1", company);
 
-// app.use(express.static(path.join(__dirname, "../frontend/build")));
-
-// app.get("*", (res, req)=>{
-//     res.sendFile(path.resolve(__dirname, "../frontend/build/index.js"));
-// })
 
 // middleware for error
 app.use(errorMiddleware);
