@@ -50,9 +50,9 @@ const userSchema = new mongoose.Schema({
     type: String,
     default: "user",
   },
-  walletAddress: {
-    type: String
-  },
+  // walletAddress: {
+  //   type: String
+  // },
   resetPasswordToken: String,
   resetPasswordExpire: Date,
 });

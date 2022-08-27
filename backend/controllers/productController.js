@@ -20,33 +20,33 @@ exports.createProduct = catchAsyncErrors(async (req, res, next) => {
   };
   const product = await Product.create(data);
 
-  let data2 = JSON.stringify({
-    chain: "ETH",
-    to: "0x687422eEA2cB73B5d3e242bA5456b782919AFc85",
-    url: `https://chainkartshop.netlify.app/${category}/${subCategory}/${product.name}`,
-    tokenId: "ASSET_UNIT",
-  });
+  // let data2 = JSON.stringify({
+  //   chain: "ETH",
+  //   to: "0x687422eEA2cB73B5d3e242bA5456b782919AFc85",
+  //   url: `https://chainkartshop.netlify.app/${category}/${subCategory}/${product.name}`,
+  //   tokenId: "ASSET_UNIT",
+  // });
 
-  let config = {
-    method: "post",
-    url: "https://api-eu1.tatum.io/v3/nft/mint",
-    headers: {
-      "Content-Type": "application/json",
-      "x-api-key": "657b85a0-814a-4300-933d-40b17088147a",
-      "x-testnet-type": "ethereum-ropsten",
-    },
-    data: data2,
-  };
+  // let config = {
+  //   method: "post",
+  //   url: "https://api-eu1.tatum.io/v3/nft/mint",
+  //   headers: {
+  //     "Content-Type": "application/json",
+  //     "x-api-key": "657b85a0-814a-4300-933d-40b17088147a",
+  //     "x-testnet-type": "ethereum-ropsten",
+  //   },
+  //   data: data2,
+  // };
 
-  const res1 = await axios(config);
-  const txId = {
-    tokenID: res1.data.txId,
-  };
+  // const res1 = await axios(config);
+  // const txId = {
+  //   tokenID: res1.data.txId,
+  // };
 
-  await Product.findByIdAndUpdate(product._id, txId, {
-    new: true,
-    runValidators: true,
-  });
+  // await Product.findByIdAndUpdate(product._id, txId, {
+  //   new: true,
+  //   runValidators: true,
+  // });
 
   res.status(201).json({
     success: true,
